@@ -1,0 +1,1154 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\EasyGen.ico"
+IDR_EASYGETYPE          ICON    DISCARDABLE     "..\\res\\EasyGenDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_FILE_NEW
+    SEPARATOR
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_FILE_IMPORT_BITMAP
+    BUTTON      ID_FILE_EXPORT_BITMAP
+    SEPARATOR
+    BUTTON      ID_FILE_IMPORT_ALPHAMAP
+    BUTTON      ID_FILE_EXPORT_ALPHAMAP
+    SEPARATOR
+    BUTTON      ID_FILE_IMPORT_FROMMAP
+    BUTTON      ID_FILE_EXPORT_Q3AMAP
+    SEPARATOR
+    BUTTON      ID_EDIT_UNDO
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FLIP
+    SEPARATOR
+    BUTTON      ID_VIEW_WIRES
+    BUTTON      ID_VIEW_FLAT
+    BUTTON      ID_VIEW_ALPHAMAP
+    BUTTON      ID_VIEW_TEXTURE
+    SEPARATOR
+    BUTTON      ID_VIEW_NOFRAME
+    BUTTON      ID_VIEW_ADDWIRES
+    BUTTON      ID_VIEW_TRISFRAME
+    SEPARATOR
+    BUTTON      ID_TOGGLEAXIS
+    SEPARATOR
+    BUTTON      ID_TOGGLE_FLATTRIS
+    BUTTON      ID_TOGGLE_SLOPE
+    BUTTON      ID_TOGGLE_EXCLUDEDTRIS
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        POPUP "Export"
+        BEGIN
+            MENUITEM "Terrain entity\t(.map)",      ID_FILE_EXPORT_Q3AMAP
+            MENUITEM "Heightmap\t(.bmp)",           ID_FILE_EXPORT_BITMAP
+            MENUITEM "Alphamap\t(.pcx)",            ID_FILE_EXPORT_ALPHAMAP
+            MENUITEM "Metashader\t(.shader)",       ID_FILE_EXPORT_METASHADER
+
+        END
+        MENUITEM SEPARATOR
+        POPUP "Import"
+        BEGIN
+            MENUITEM "Radiant map\t(.map)",         ID_FILE_IMPORT_FROMMAP
+            MENUITEM "Heightmap\t(.bmp)",           ID_FILE_IMPORT_BITMAP
+            MENUITEM "Alphamap\t(.pcx)",            ID_FILE_IMPORT_ALPHAMAP
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "Entire Flip | Mirror",        ID_FLIP
+        MENUITEM SEPARATOR
+        MENUITEM "&Preferences\tP",             ID_PREFERENCES
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Wires",                       ID_VIEW_WIRES
+        MENUITEM "Flat",                        ID_VIEW_FLAT
+        MENUITEM "Texture",                     ID_VIEW_TEXTURE
+        MENUITEM "Alphamap",                    ID_VIEW_ALPHAMAP
+        MENUITEM SEPARATOR
+        MENUITEM "... + no frame",              ID_VIEW_NOFRAME
+        MENUITEM "... + Quad frame",            ID_VIEW_ADDWIRES
+        MENUITEM "... + Tris frame",            ID_VIEW_TRISFRAME
+        MENUITEM SEPARATOR
+        MENUITEM "Flat Shade",                  ID_VIEW_FLATSHADE
+        MENUITEM "Flat Smooth",                 ID_VIEW_FLATSMOOTH
+        MENUITEM SEPARATOR
+        MENUITEM "Culling",                     ID_VIEW_CULLING
+    END
+    POPUP "&Textures"
+    BEGIN
+        MENUITEM "&Add folder ...",             ID_TEXTURES_LOADDIR
+        MENUITEM "&Clear",                      ID_TEXTURES_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "Scale &Up\tKP_+",             ID_TEX_FACTOR_UP
+        MENUITEM "Scale &Down\tKP_-",           ID_TEX_FACTOR_DN
+        MENUITEM "&Fit\tKP_*",                  ID_TEX_FACTOR_NATURAL
+    END
+    POPUP "Te&rrain"
+    BEGIN
+        MENUITEM "&Clear excluded tris",        ID_TERRAIN_CLEAREXCLUDEDTRIS
+    END
+    POPUP "&World"
+    BEGIN
+        MENUITEM "&Remove",                     ID_WORLD_REMOVE
+        MENUITEM SEPARATOR
+        MENUITEM "&Show",                       ID_WORLD_SHOW
+        MENUITEM "&Hide",                       ID_WORLD_HIDE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About EasyGen...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    ",",            ID_CAMERA_STRAFELEFT,   ASCII,  NOINVERT
+    ".",            ID_CAMERA_STRAFERIGHT,  ASCII,  NOINVERT
+    "A",            ID_CAMERA_LOOKUP,       VIRTKEY, NOINVERT
+    "C",            ID_CAMERA_DOWN,         VIRTKEY, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "D",            ID_CAMERA_UP,           VIRTKEY, NOINVERT
+    "E",            ID_TOGGLE_INEYE,        VIRTKEY, NOINVERT
+    "H",            ID_MODIFIER_HIDE,       VIRTKEY, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_PREFERENCES,         VIRTKEY, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_TEST,                VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_ADD,         ID_TEX_FACTOR_UP,       VIRTKEY, NOINVERT
+    VK_BACK,        ID_BACKSPACE,           VIRTKEY, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_DOWN,        ID_CAMERA_BACKWARD,     VIRTKEY, NOINVERT
+    VK_END,         ID_CAMERA_ALIGN,        VIRTKEY, NOINVERT
+    VK_ESCAPE,      ID_MODIFIER_NONE,       VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_HOME,        ID_CAMERA_ALIGNZ,       VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_LEFT,        ID_CAMERA_LEFT,         VIRTKEY, NOINVERT
+    VK_MULTIPLY,    ID_TEX_FACTOR_NATURAL,  VIRTKEY, NOINVERT
+    VK_NEXT,        ID_CAMERA_FLOOR,        VIRTKEY, NOINVERT
+    VK_PRIOR,       ID_CAMERA_ZEROH,        VIRTKEY, NOINVERT
+    VK_RIGHT,       ID_CAMERA_RIGHT,        VIRTKEY, NOINVERT
+    VK_SPACE,       ID_MODIFIER_APPLY,      VIRTKEY, NOINVERT
+    VK_SUBTRACT,    ID_TEX_FACTOR_DN,       VIRTKEY, NOINVERT
+    VK_TAB,         ID_CYCLE_COLORS,        VIRTKEY, CONTROL, NOINVERT
+    VK_UP,          ID_CAMERA_FORWARD,      VIRTKEY, NOINVERT
+    "W",            ID_TOGGLE_WORLD,        VIRTKEY, NOINVERT
+    "X",            ID_TOGGLEAXIS,          VIRTKEY, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_CAMERA_LOOKDOWN,     VIRTKEY, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 201
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About EasyGen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,92,172,50,24,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,4,0,228,168
+    EDITTEXT        IDC_CMDLIST,8,76,220,88,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    EDITTEXT        IDC_APPVERSION,112,12,116,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_APPAUTHOR,112,26,116,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_APPEMAIL,112,40,116,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_APPSITE,112,54,116,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Version",IDC_STATIC,72,14,36,8,0,WS_EX_RIGHT
+    LTEXT           "Author",IDC_STATIC,72,28,36,8,0,WS_EX_RIGHT
+    LTEXT           "E-mail",IDC_STATIC,72,42,36,8,0,WS_EX_RIGHT
+    LTEXT           "Homepage",IDC_STATIC,72,56,36,8,0,WS_EX_RIGHT
+    LTEXT           "Command List :",IDC_STATIC,8,68,108,8
+    CONTROL         155,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,24,20,33,31
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "EasyGen MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "EasyGen\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "EasyGen.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "EasyGen Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "EasyGen\n\nEasyGen\nEasyGen Files (*.egn)\n.egn\nEasyGen.Document\nEasyGen Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "EasyGen"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Command list\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_EXPORT_Q3AMAP   "Export Quake3 map ( + alphamap + metashader )\nExport map ( + alphamap + metashader )"
+    ID_CYCLE_RENDER_MODE    "Cycle render modes"
+    ID_CYCLE_COLORS         "Cycle grid colors"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOGGLE_PLAYER_MOVE   "Moves around the player (CTRL+LMOUSE)"
+    ID_FILE_EXPORT_BITMAP   "Export heightmap\nExport heightmap"
+    ID_FILE_IMPORT_BITMAP   "Import hightmap\nImport heightmap"
+    ID_TEXTURES_LOADDIR     "Load a texture folder in the texture window"
+    ID_TEXTURES_CLEAR       "Clear unused textures from the window"
+    ID_VIEW_WIRES           "View as Wireframe\nRendering: Wireframe"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_FLAT            "View as Flat\nRendering: Flat"
+    ID_VIEW_TEXTURE         "View as Texture\nRendering: Texture"
+    ID_SELECTION_ROTATEZ    "Rotate selection (only if square)\nRotate"
+    ID_SHOWAXIS             "Toggle axis"
+    ID_TOGGLEAXIS           "Show axis\nDraw Axis"
+    ID_SELECTION_FLIP       "Flip selection\nFlip"
+    ID_SELECTION_MIRROR     "Mirror selection\nMirror"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SELECTION_ALL        "Select whole terrain\nSelect whole terrain"
+    ID_TOGGLE_INEYE         "In eye mode\nPlayer view"
+    ID_VIEW_ALPHAMAP        "View as Alphamap\nRendering: Alphamap"
+    ID_VIEW_ADDWIRES        "Quad frame\nFrame: quads"
+    ID_FILE_EXPORT_ALPHAMAP "Export alphamap\nExport alphamap"
+    ID_FILE_IMPORT_ALPHAMAP "Import alphamap\nImport alphamap"
+    ID_VIEW_TRISFRAME       "Tris frame\nFrame: triangles"
+    ID_VIEW_NOFRAME         "No frame\nFrame: none"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_MODIFIER   "Mod = "
+    ID_INDICATOR_PLAYER     "Pos = "
+    ID_INDICATOR_GRID       "Grid ="
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FIXEDCAMERA          "Toggle Eye Camera"
+    ID_EYECAMERA            "Toggle Eye Camera"
+    ID_FLIP                 "Flip | Mirror the entire terrain (useful for ctf maps)\nEntire Flip & Mirror"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOGGLE_FLATTRIS      "Show flat triangles\nDraw: flat triangles"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TOGGLE_SLOPE         "Show triangles a player can't climb\nDraw: steep triangles"
+    ID_FILE_IMPORT_FROMMAP  "Import stuff from a Radiant map\nImport stuff from a Radiant map"
+    ID_TOGGLE_EXCLUDEDTRIS  "Show triangles that will not be exported\nDraw: excluded triangles"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Italian (Italy) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+#ifdef _WIN32
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_STEP_UP             ICON    DISCARDABLE     "..\\res\\icon1.ico"
+IDI_STEP_DOWN           ICON    DISCARDABLE     "..\\res\\step_dow.ico"
+IDI_STEP_RIGHT          ICON    DISCARDABLE     "..\\res\\step_rig.ico"
+IDI_STEP_LEFT           ICON    DISCARDABLE     "..\\res\\step_lef.ico"
+IDI_STEP_BACKWARD       ICON    DISCARDABLE     "..\\res\\step_bac.ico"
+IDI_STEP_FORWARD        ICON    DISCARDABLE     "..\\res\\step_for.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MOD_HILL            BITMAP  DISCARDABLE     "..\\res\\mod_hill.bmp"
+IDB_NEMO                BITMAP  DISCARDABLE     "..\\res\\nemo.bmp"
+IDB_FLIPH               BITMAP  DISCARDABLE     "..\\res\\fliph.bmp"
+IDB_FLIPB               BITMAP  DISCARDABLE     "..\\res\\flipb.bmp"
+IDB_FLIPC               BITMAP  DISCARDABLE     "..\\res\\flipc.bmp"
+IDB_FLIPD               BITMAP  DISCARDABLE     "..\\res\\flipd.bmp"
+IDB_FLIPE               BITMAP  DISCARDABLE     "..\\res\\flipe.bmp"
+IDB_FLIPF               BITMAP  DISCARDABLE     "..\\res\\flipf.bmp"
+IDB_FLIPG               BITMAP  DISCARDABLE     "..\\res\\flipg.bmp"
+IDB_FLIPA               BITMAP  DISCARDABLE     "..\\res\\flipa.bmp"
+IDB_AXES                BITMAP  DISCARDABLE     "..\\res\\axes.bmp"
+IDB_WARNING             BITMAP  DISCARDABLE     "..\\res\\warning.bmp"
+IDB_WORLDWARNING        BITMAP  DISCARDABLE     "..\\res\\worldbrushes.bmp"
+IDB_WORLDWARNING2       BITMAP  DISCARDABLE     "..\\res\\worldbrushes2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CMD DIALOG DISCARDABLE  0, 0, 166, 36
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Grid",IDC_TABBUTTON,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE | WS_GROUP,0,0,36,20
+    CONTROL         "Modifier",IDC_TABBUTTON2,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,36,0,40,20
+    CONTROL         "",IDC_TABCENTER,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,
+                    2,22,161,10
+    CONTROL         "Alphamap",IDC_TABBUTTON3,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,76,0,44,20
+    CONTROL         "Models",IDC_TABBUTTON4,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,120,0,45,20
+END
+
+CG_IDD_PROGRESS DIALOG DISCARDABLE  0, 0, 187, 42
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",CG_IDC_PROGDLG_PROGRESS,"msctls_progress32",
+                    WS_BORDER,16,18,154,13
+    LTEXT           " 0 %",CG_IDC_PROGDLG_PERCENT,84,7,18,8
+END
+
+IDD_EXPORT_Q3A_SETUP DIALOG DISCARDABLE  0, 0, 292, 245
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Radiant .map and related stuff settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Save the map",IDC_SAVE_MAP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,17,112,8
+    CONTROL         "Save the metashader",IDC_SAVE_SHADER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,29,112,8
+    CONTROL         "Save the alphamap",IDC_SAVE_PCX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,41,112,8
+    CONTROL         "Insert into a skybox",IDC_BOXIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,172,16,100,8
+    CONTROL         "Add an info_player_start",IDC_PLAYERSTART,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,172,24,100,8
+    CONTROL         "Thin mesh",IDC_THINMESH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,172,32,100,8
+    CONTROL         "Set enableBreath (Q3TA)",IDC_ENABLEBREATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,172,40,100,8
+    CONTROL         "Set enableDust (Q3TA)",IDC_ENABLEDUST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,172,48,100,8
+    EDITTEXT        IDC_LIGHTGRIDSIZE,168,85,48,12,ES_AUTOHSCROLL
+    PUSHBUTTON      " ...",IDC_BUT_ALPHAMAP,120,73,20,13
+    PUSHBUTTON      " ...",IDC_BUT_METASHADER,120,112,20,13
+    EDITTEXT        IDC_METASHADERFOLDER,80,128,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_METASHADERNAME,132,128,40,12,ES_AUTOHSCROLL
+    CONTROL         "Clouds",IDC_MS_CLOUDS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,112,40,10
+    COMBOBOX        IDC_COMBO_TEXTOP,56,160,224,36,CBS_DROPDOWN | 
+                    CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_TEXNOTTOP,56,176,224,12,ES_AUTOHSCROLL
+    CONTROL         "Insert into an existing map",IDC_INSERT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,92,222,97,10
+    PUSHBUTTON      "Cancel",IDCANCEL,4,220,50,16
+    DEFPUSHBUTTON   "Continue >>",IDOK,236,220,52,16
+    EDITTEXT        IDC_METASHADERFILENAME,44,112,72,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_ALPHAMAPFILENAME,44,73,72,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "top :",IDC_STATIC,39,161,15,8
+    LTEXT           "bottom, sides :",IDC_STATIC,8,177,46,8
+    LTEXT           "filename",IDC_STATIC,8,74,32,8
+    LTEXT           "name",IDC_STATIC,8,130,32,8
+    LTEXT           "filename",IDC_STATIC,8,114,32,8
+    GROUPBOX        "Metashader ",IDC_STATIC,4,100,284,48
+    GROUPBOX        "Alphamap ",IDC_STATIC,4,56,148,44
+    GROUPBOX        "General / Worldspawn options",IDC_STATIC,156,4,132,96
+    LTEXT           "gridsize (to light entities)",IDC_STATIC,164,75,104,8
+    GROUPBOX        "Save what",IDC_STATIC,4,4,148,52
+    LTEXT           "textures  / ",IDC_STATIC,44,130,35,8
+    LTEXT           "/",IDC_STATIC,124,130,8,8
+    CONTROL         "Include models",IDC_MODELS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,172,56,100,8
+    GROUPBOX        "Shader",IDC_STATIC,4,148,284,44
+    CONTROL         "Export all triangles",IDC_EXPORTALLTRIS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,172,64,100,10
+    LTEXT           "(I recommend you to make a backup of your map...)",
+                    IDC_STATIC,62,232,163,8
+    CONTROL         190,IDC_STATIC,"Static",SS_BITMAP | WS_BORDER,44,196,203,
+                    20
+    COMBOBOX        IDC_SHADERTEMPLATE,216,132,68,84,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Preview",IDC_EDITTEMPLATE,216,108,68,12
+    LTEXT           "Templates :",IDC_STATIC,217,122,38,8
+END
+
+IDD_BITMAP_IMPORT DIALOGEX 0, 0, 256, 165
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Bitmap Import Setup"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Ok",IDOK,200,148,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,4,148,50,14
+    LTEXT           "Terrain height",IDC_STATIC,132,84,52,8,0,WS_EX_RIGHT
+    EDITTEXT        IDC_GRIDHEIGHT,192,81,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKFRAME,8,16,108,96
+    LTEXT           "Preview :",IDC_STATIC,11,4,100,8
+    PUSHBUTTON      "Browse ...",IDC_BROWSE,8,116,108,16
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,4,142,247,1
+    LTEXT           "Information :",IDC_STATIC,140,4,40,8
+    EDITTEXT        IDC_HMAP_INFORMATION,124,16,124,56,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    CTEXT           "Press the [...] button below to browse for an heightmap to import.",
+                    IDC_HMAP_HELP,16,76,88,32,0,WS_EX_TRANSPARENT
+END
+
+IDD_PREFERENCES DIALOG DISCARDABLE  0, 0, 268, 201
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,212,4,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,212,20,50,14
+    GROUPBOX        "Export Folders",IDC_STATIC,4,40,260,56
+    LTEXT           "Bitmaps",IDC_STATIC,8,80,64,8
+    EDITTEXT        IDC_BITMAPEXPPATH,76,78,156,12,ES_LOWERCASE | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_BITMAPEXPPATH,236,78,22,12
+    GROUPBOX        "Import Folders",IDC_STATIC,4,100,260,32
+    LTEXT           "Bitmaps",IDC_STATIC,8,115,64,8
+    EDITTEXT        IDC_BITMAPIMPPATH,76,113,156,12,ES_LOWERCASE | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_BITMAPIMPPATH,236,113,22,13
+    CONTROL         "",IDC_BGCOLORCTRL,"Static",SS_BLACKFRAME,4,4,16,12
+    LTEXT           "Background color 3D",IDC_STATIC,24,6,68,8
+    GROUPBOX        "Misc",IDC_STATIC,4,136,260,60
+    LTEXT           "Player size :",IDC_STATIC,8,146,44,8
+    EDITTEXT        IDC_PGX,52,144,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PGY,72,144,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PGZ,92,144,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Texture load filter :",IDC_STATIC,8,162,59,8
+    EDITTEXT        IDC_TEXTUREFILTER,72,160,88,12,ES_LOWERCASE | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Work mod",IDC_STATIC,8,65,64,8
+    EDITTEXT        IDC_GAMEPATH,76,64,156,12,ES_LOWERCASE | ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BROWSE_GAMEPATH,236,62,22,13
+    LTEXT           "(c:\\quake3\\baseq3)",IDC_STATIC,76,52,92,8
+    CONTROL         "",IDC_FRAMECOLORCTRL,"Static",SS_BLACKFRAME,4,18,16,12
+    LTEXT           "Overlay frame color 3D",IDC_STATIC,24,20,73,8
+    CONTROL         "aas",IDC_FRAMEAAS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    108,20,28,10
+    EDITTEXT        IDC_SLOPEANGLE,168,144,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Slope max",IDC_STATIC,125,146,37,8
+    EDITTEXT        IDC_UNDOLEVELS,236,144,20,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Undo",IDC_STATIC,213,146,18,8
+    LTEXT           "(only terrain mesh)",IDC_STATIC,204,155,58,8
+    EDITTEXT        IDC_SHADERSIGNORE,72,176,184,12,ES_LOWERCASE | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Ignore brushes\n with shaders :",IDC_STATIC,8,174,55,16
+END
+
+IDD_GRIDMANAGER DIALOG DISCARDABLE  0, 0, 240, 161
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Grid Manager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,188,8,48,12
+    PUSHBUTTON      "Cancel",IDCANCEL,188,24,48,12
+    LTEXT           "Divisions",IDC_STATIC,8,18,32,8
+    GROUPBOX        "",IDC_STATIC,4,4,180,152
+    EDITTEXT        IDC_CELLS,52,16,22,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Apply",IDC_RECELLS,128,16,48,12
+    LTEXT           "Static",IDC_STATIC_CELLS,86,18,27,8
+    LTEXT           "x",IDC_STATIC,77,18,8,8
+    LTEXT           "Width",IDC_STATIC,8,34,32,8
+    EDITTEXT        IDC_WIDTH,52,32,22,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Apply",IDC_RESIZE,128,32,48,12
+    LTEXT           "Static",IDC_STATIC_WIDTH,86,34,27,8
+    LTEXT           "x",IDC_STATIC,77,34,8,8
+    CONTROL         "Lock terrain",IDC_LOCKTERRAIN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,128,48,51,8
+END
+
+IDD_TAB1 DIALOGEX 0, 0, 163, 268
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CELLSX,40,27,24,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_CELLSY,76,27,24,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "Apply",IDC_RECELLS,108,20,40,14
+    EDITTEXT        IDC_WIDTHX,36,56,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_WIDTHY,72,56,28,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "Apply",IDC_REWIDTHS,108,48,40,14
+    EDITTEXT        IDC_CELLWIDTHX,40,83,24,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_CELLWIDTHY,76,83,24,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "Apply",IDC_RECELLWIDTHS,108,76,40,14
+    EDITTEXT        IDC_MAXHEIGHT,52,122,32,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "Apply",IDC_REHEIGHT,108,115,40,14
+    CONTROL         "Lock terrain shape (don't deform it)",IDC_LOCK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,153,136,8
+    COMBOBOX        IDC_ALIGNX,32,164,44,52,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ALIGNY,108,164,44,60,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Divisions :",IDC_STATIC,4,16,33,8
+    CTEXT           "Static",IDC_CURCELLSX,40,16,24,10,0,WS_EX_STATICEDGE
+    CTEXT           "Static",IDC_CURCELLSY,76,16,24,10,0,WS_EX_STATICEDGE
+    LTEXT           "Widths :",IDC_STATIC,4,44,27,8
+    CTEXT           "Static",IDC_CURWIDTHX,36,44,28,10,0,WS_EX_STATICEDGE
+    CTEXT           "Static",IDC_CURWIDTHY,72,44,28,10,0,WS_EX_STATICEDGE
+    CTEXT           "( X )",IDC_STATIC,40,4,22,8
+    CTEXT           "( Y )",IDC_STATIC,76,4,22,8
+    GROUPBOX        "On Apply",IDC_STATIC,4,140,152,40
+    CTEXT           "X align",IDC_STATIC,8,166,22,8
+    CTEXT           "Y align",IDC_STATIC,82,166,22,8
+    LTEXT           "Div.Widt.:",IDC_STATIC,4,72,32,8
+    CTEXT           "Static",IDC_CURCELLWIDTHX,40,72,24,10,0,
+                    WS_EX_STATICEDGE
+    CTEXT           "Static",IDC_CURCELLWIDTHY,76,72,24,10,0,
+                    WS_EX_STATICEDGE
+    LTEXT           "Max Height :",IDC_STATIC,4,111,41,8
+    CTEXT           "Static",IDC_CURMAXHEIGHT,52,111,32,10,0,
+                    WS_EX_STATICEDGE
+    CTEXT           "( Z )",IDC_STATIC,57,100,22,8
+    EDITTEXT        IDC_ORIGIN_X,8,196,32,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_ORIGIN_Y,44,196,32,12,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_ORIGIN_Z,80,196,32,12,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "Set ->",IDC_ORIGIN_SET,116,188,32,14
+    GROUPBOX        "Origin of terrain in map",IDC_STATIC,4,180,151,84
+    LTEXT           "x",IDC_STATIC,8,188,8,8
+    LTEXT           "y",IDC_STATIC,44,188,8,8
+    LTEXT           "z",IDC_STATIC,80,188,8,8
+    PUSHBUTTON      "x",IDC_STEPLEFT,8,228,32,14
+    PUSHBUTTON      "x",IDC_STEPRIGHT,80,228,32,14
+    PUSHBUTTON      "y",IDC_STEPFORWARD,44,212,32,14
+    PUSHBUTTON      "y",IDC_STEPBACKWARD,44,244,32,14
+    PUSHBUTTON      "z",IDC_STEPUP,80,212,32,14
+    PUSHBUTTON      "z",IDC_STEPDOWN,80,244,32,14
+    EDITTEXT        IDC_STEPBY,116,244,31,14,ES_AUTOHSCROLL
+    LTEXT           "Step :",IDC_STATIC,116,232,20,8
+    CONTROL         174,IDC_STATIC,"Static",SS_BITMAP,52,228,18,14
+    PUSHBUTTON      "<- Get",IDC_ORIGIN_GET,116,204,32,14
+END
+
+IDD_TAB2 DIALOG DISCARDABLE  0, 0, 160, 176
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_MODIFIERS,4,4,148,192,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Add",IDC_MODE_ADD,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,4,124,44,10
+    CONTROL         "Compare",IDC_MODE_MAX,"Button",BS_AUTORADIOBUTTON,4,133,
+                    44,10
+    CONTROL         "Replace",IDC_MODE_IDENT,"Button",BS_AUTORADIOBUTTON,4,
+                    142,44,10
+    PUSHBUTTON      "Apply",IDC_MODAPPLY,96,129,56,20
+    CONTROL         "Slider1",IDC_SLNOISE,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,4,84,76,12
+    CONTROL         "Slider1",IDC_SLSMOOTH,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,4,97,76,12
+    EDITTEXT        IDC_GNOISE,80,84,20,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    EDITTEXT        IDC_GSMOOTH,80,97,20,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Base Noise",IDC_STATIC,104,86,43,8
+    LTEXT           "Base Smooth",IDC_STATIC,104,99,43,8
+    EDITTEXT        IDC_GSCALE,80,108,20,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Base Scale",IDC_STATIC,104,110,37,8
+    CONTROL         "Slider1",IDC_SLSCALE,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,4,108,76,12
+    EDITTEXT        IDC_DESCRIPTION,4,28,148,52,ES_MULTILINE | ES_READONLY | 
+                    WS_VSCROLL
+    LTEXT           "Description :",IDC_STATIC,4,19,40,8
+    EDITTEXT        IDC_VERTEXDRAGSTEP,84,158,20,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_VERTEXDRAGSTEPSPIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS,104,158,11,12
+    LTEXT           "Vertex Drag Step ",IDC_STATIC,23,159,55,8
+END
+
+IDD_TAB3 DIALOG DISCARDABLE  0, 0, 160, 205
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_ZOOM,75,6,36,115,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Show texture if available",IDC_DRAWTEXTURE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,124,104,8
+    PUSHBUTTON      "Posterize",IDC_POSTERIZE,73,160,48,14
+    EDITTEXT        IDC_LEVELS,50,160,18,14,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "Delete",IDC_DELETEINDEX,112,120,43,14
+    CONTROL         "",IDC_ALPHAPALFRAME,"Static",SS_BLACKFRAME,4,20,106,96
+    CONTROL         "Palette :",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,5,7,27,10
+    LTEXT           "Show :",IDC_STATIC,49,7,23,10
+    CONTROL         "",IDC_SELCOLFRAME,"Static",SS_BLACKFRAME,113,28,42,37
+    CONTROL         "",IDC_SELTEXFRAME,"Static",SS_BLACKFRAME,113,78,42,37
+    CTEXT           "Selected\r\nindex :",IDC_STATIC,118,2,33,16
+    LTEXT           "Color",IDC_STATIC,125,19,17,8
+    LTEXT           "Texture",IDC_STATIC,121,69,25,8
+    LTEXT           "Help: click on a black top-left box to create a palette index. Pick a color for it and then assign a texture by clicking one in the texture window.",
+                    IDC_STATIC,1,179,157,24
+    LTEXT           "Lvls :",IDC_STATIC,28,162,17,8
+    CONTROL         "Slider1",IDC_SLPAINT,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    WS_TABSTOP,46,140,88,16
+    LTEXT           "Paint radius :",IDC_STATIC,4,142,42,8
+    EDITTEXT        IDC_PAINTRADIUS,138,143,16,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | NOT WS_BORDER
+END
+
+IDD_FLIPS DIALOG DISCARDABLE  0, 0, 256, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Flip | Mirror entire terrain"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,200,4,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,200,24,50,14
+    CONTROL         "",IDC_FLIPA,"Button",BS_AUTORADIOBUTTON | WS_GROUP,28,
+                    60,12,8
+    CONTROL         "",IDC_FLIPB,"Button",BS_AUTORADIOBUTTON,68,60,12,8
+    CONTROL         "",IDC_FLIPC,"Button",BS_AUTORADIOBUTTON,108,60,12,8
+    CONTROL         "",IDC_FLIPD,"Button",BS_AUTORADIOBUTTON,148,60,12,8
+    CONTROL         "",IDC_FLIPE,"Button",BS_AUTORADIOBUTTON,28,129,12,8
+    CONTROL         "",IDC_FLIPF,"Button",BS_AUTORADIOBUTTON,68,129,12,8
+    CONTROL         "",IDC_FLIPG,"Button",BS_AUTORADIOBUTTON,108,129,12,8
+    CONTROL         "",IDC_FLIPH,"Button",BS_AUTORADIOBUTTON,148,129,12,8
+    CONTROL         169,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,16,24,34,31
+    CONTROL         163,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,56,24,34,31
+    CONTROL         164,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,96,24,34,31
+    CONTROL         165,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,136,24,34,31
+    CONTROL         166,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,16,92,34,31
+    CONTROL         167,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,56,92,34,31
+    CONTROL         168,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,96,92,34,31
+    CONTROL         162,IDC_STATIC,"Static",SS_BITMAP | SS_SUNKEN | 
+                    WS_BORDER,136,92,34,31
+    LTEXT           "Mirror && Flip",IDC_STATIC,28,8,116,8
+    LTEXT           "Mirror",IDC_STATIC,32,80,116,8
+    CONTROL         "Double the grid in the desired direction\n( keep this unchecked if you have an half of the terrain ready to be overwritten with the mirror | flip of the other one )",
+                    IDC_ENLARGE,"Button",BS_AUTOCHECKBOX | BS_TOP | 
+                    BS_MULTILINE | WS_TABSTOP,8,144,188,32
+END
+
+IDD_TAB4 DIALOG DISCARDABLE  0, 0, 160, 204
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_MD3LIST,4,4,152,116,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_VIEWXZ,"Static",SS_BLACKFRAME,8,136,64,60
+    CONTROL         "",IDC_VIEWYZ,"Static",SS_BLACKFRAME,84,136,64,60
+    LTEXT           "Front View",IDC_STATIC,24,124,34,8
+    LTEXT           "Side View",IDC_STATIC,100,124,32,8
+END
+
+IDD_IMPORT_FROMMAP DIALOG DISCARDABLE  0, 0, 272, 209
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Import from map - Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,216,4,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,216,20,50,14
+    CONTROL         "Models",IDC_IMPORT_MODELS,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,228,28,39,10
+    CONTROL         "Wordlspawn && func_groups",IDC_IMPORT_WORLD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,72,103,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,4,112,264,92
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,4,68,208,39
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,
+                    224,24,48,16
+    CONTROL         "List2",IDC_LC_TERRAINS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOLABELWRAP | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,8,128,256,72
+    LTEXT           "Terrains, select one :",IDC_STATIC,8,116,67,8
+    LTEXT           "(only one terrain at a time can be edited with easygen)",
+                    IDC_STATIC,92,116,170,8
+    CONTROL         189,IDC_WORLDWARNING,"Static",SS_BITMAP | WS_BORDER,6,84,
+                    203,20
+    EDITTEXT        IDC_MAP_INFO,8,8,196,32,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    GROUPBOX        "Map information",IDC_STATIC,4,0,208,44
+    LTEXT           "What do you want to import ?",IDC_STATIC,12,52,94,8
+END
+
+IDD_SHADERTEMPLATE DIALOG DISCARDABLE  0, 0, 348, 277
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Metashader Preview"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,292,4,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,292,22,50,14
+    EDITTEXT        IDC_TEXT,8,4,268,264,ES_MULTILINE | ES_WANTRETURN | 
+                    WS_VSCROLL | WS_HSCROLL
+    EDITTEXT        IDC_MP_FIND,296,108,44,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MP_REPWITH,296,136,44,12,ES_AUTOHSCROLL
+    LTEXT           "Find",IDC_STATIC,293,96,14,8
+    LTEXT           "Replace with",IDC_STATIC,293,125,42,8
+    PUSHBUTTON      "Replace All",IDC_REPLACEALL,296,156,44,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CMD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 29
+    END
+
+    CG_IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 35
+    END
+
+    IDD_EXPORT_Q3A_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
+
+    IDD_BITMAP_IMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_PREFERENCES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_GRIDMANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_TAB1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 156
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 261
+    END
+
+    IDD_TAB2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_TAB3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_FLIPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_TAB4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 197
+    END
+
+    IDD_IMPORT_FROMMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_SHADERTEMPLATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 341
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 270
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\EasyGen.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    CG_IDS_PROGRESS_CAPTION "Working ..."
+    IDS_PROGRESS_Q3AMAP     "Saving ..."
+    IDS_ININOTFOUND         "This seems to be the first time you run EasyGen.\r\n\r\nYou must bring up the Preferences dialog (Edit/Preferences) to locate your Quake3 work mod folder first.\r\n\r\nYou can access commands list by pressing the '?' button on the toolbar.\r\n\r\nEnjoy."
+END
+
+#endif    // Italian (Italy) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\EasyGen.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

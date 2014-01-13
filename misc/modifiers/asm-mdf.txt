@@ -1,0 +1,54 @@
+ Reserved variables:
+ ~~~~~~~~~~~~~~~~~~
+ Coordinates of the point to compute		PX,PY,PZ 
+ Coordinates of the modifier			MX,MY
+ Radius and Height of the modifier		MR,MH
+ Maximum Z value of the terrain			MAXZ
+ Minimum Z value of the terrain			MINZ
+ Pigreco (3.14 ... )				PI
+
+ New calculated value for PZ			NEWZ
+
+ Reserved keywords:
+ ~~~~~~~~~~~~~~~~~
+OPCODE		USE			WHAT DOES
+------		---			---------
+nop		nop			nothing
+htl		htl			halt the execution (return TRUE)
+abort		abort			halt the execution (return FALSE)
+
+abs		abs dest		dest = absolute_value(dest)
+sqr		sqr dest		dest = square(dest)
+sqrt		sqrt dest		dest = square_root(dest)
+rand		rand dest		dest = [0..1]
+inv		inv dest		dest = 1 / dest
+opp		opp dest		dest = -dest
+sin		sin dest		dest = sin(dest)
+cos		cos dest		dest = cos(dest)
+acos		acos dest		dest = acos(dest) [dest must be in the range -1..1 ]
+
+mov		mov dest,source		dest = source
+add		add dest,source		dest = dest + source
+sub		sub dest,source		dest = dest - source
+mul		mul dest,source		dest = dest * source
+div		div dest,source		dest = dest / source
+susq		susq dest,source	dest = square( dest - source )
+max		max alfa,beta		alfa = max(alfa,beta)
+min		min alfa,beta		alfa = min(alfa,beta)
+
+ex_dist		ex_dist dest,x0,y0,x1,y1	dest = square_root( square(x0-x1) + square(y0-y1) )
+ex_dist2	ex_dist2 dest,x0,y0,x1,y1	dest = square(x0-x1) + square(y0-y1)
+
+cmp		cmp dest,source		compare dest with source
+
+jmp		jmp [label]		jump to label
+je		je [label]		jump to label if cmp was equal
+jl		jl [label]		jump to label if cmp was lesser
+jg		jg [label]		jump to label if cmp was greater
+jle		jle [label]		jump to label if cmp was equal or lesser
+jge		jge [label]		jump to label if cmp was equal or greater
+
+[label]:				defines a label
+
+
+ EOF.

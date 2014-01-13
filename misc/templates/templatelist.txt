@@ -1,0 +1,8 @@
+// this should work with vanilla q3, rtcw and so on
+standard
+
+// this should work with the amazing ydnar's q3map2
+q3map2
+
+// this should work with the amazing ydnar's q3map2
+wolfet

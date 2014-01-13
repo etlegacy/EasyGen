@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>EasyGen | Tutorial</title>
+<link rel=stylesheet href="css/main.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body bgcolor="#C0C0C0" text="#000000">
+
+
+<h1 align=center style='text-align:center' class="testoBLUE">Creare terreni con  EasyGen<br>
+  by Hubas
+</h1>
+
+<p class="testoBLACK">Lo scopo di questo tutorial &egrave; di spiegare l'uso del piccolo ma potente programma EasyGen. </p>
+<p class="testoBLACK">Creare bei terreni per Quake3 o per uno dei suoi mod &egrave; stato molto problematico. Per prima cosa si doveva disegnare una heightmap (bitmap in scala di grigi, abbastanza facile da visualizzare secondo me), poi si doveva scrivere, o al limite modificare, un certo numero di shaders, che stabiliscono come le textures si mescolano sul terreno nei punti di contatto. Inoltre si doveva anche andare a disegnare (partendo dalla heightmap di prima) un' immagine chiamata alpha map, che stabilisce a quali vertici assegnare talune textures.</p>
+<p class="testoBLACK">Le alpha maps sono, almeno per me, molto difficili da visualizzare. Era anche molto facile fare errori che andavano a rendere la mappa in Quake3 abbastanza inguardabile. Credo che la caratteristica pi&ugrave; potente di EasyGen sia che ti permette di disegnare l'alpha map direttamente sopra il terreno. Puoi persino scegliere di avere una preview completa di textures (si mescolano esattamente come fa Quake3). Quando hai finito il programma esporta il terreno insieme agli shader scripts nelle apposite cartelle. Alch&egrave; resta solo da lanciare il Radiant e continuare ad aggiungere altre strutture come case etc etc.<br>
+</p>
+<h2 class="testoGREEN">. Creare la maglia</h2>
+
+<p class="testoBLACK">Ci sono diversi modi per creare lo scheletro del terreno.</p>
+<p class="testoBLACK">1. Si pu&ograve; iniziare partendo da una heightmap creata col Photoshop o un altro programma per creare immagini. Se vuoi creare un terreno con 32 * 32 divisioni ti ci vuole una heightmap di 33 * 33 pixels. Ogni pixel corrisponde ad un vertice nella heightmap. I pixel pi&ugrave; scuri danno luogo ad aree pi&ugrave; basse, quelli pi&ugrave; chiari alle zone alte.</p>
+<p class="testoBLACK">Dopo aver salvato la tua heightmap col Photoshop, dai un' altezza massima al tua terreno, fai click su File -&gt; Import -&gt; Bitmap (o premi il pulsante sulla toolbar). Ti sar&agrave; chiesto di inserire l'altezza massima, il cui valora predefinito &egrave; di 256 unit&agrave;, io di solito metto 1024 per rendere il terreno un p&ograve; pi&ugrave; vario. Oltre all'altezza modificane anche la larghezza, inserendo valori opportuni negli appositi campi che compaiono quando premi il pulsante Grid.</p>
+<p class="testoBLACK" align="center"><img src="images/Image1.jpg"></p>
+
+<p class="testoREDs"><span class="testoBLACK">Et voil&agrave;! Ecco un bel terreno.</span></p>
+<p class="testoREDs"><span class="testoBLACK">2. Oppure, se non hai una heightmap pronta all'uopo, quando il pulsante Grid &egrave; premuto (in alto a sinistra), puoi variare l'altezza di un vertice con il tasto sinistro del mouse e tenendo premuti CTRL e SHIFT. O puoi premere Modifier e scegliere di usare dei modificatori quali &quot;Hill = collina&quot; o &quot;Smooth = rende il terreno pi&ugrave; dolce&quot; e diversi altri. Tieni premuto CTRL per muovere il modificatore, premi Apply quando vuoi applicarlo. Altri comandi interessano i paramentri di un modificatore come il raggio e l'altezza, dai un'occhiata alla lista dei comandi premendo '?' nella toolbar.</span></p>
+<p class="testoGREEN"><b>. Creare l' Alphamap</b></p>
+
+<p class="testoBLACK">Adesso resta da caricare un p&ograve; di textures e da applicarle sul terreno. Useremo l'alphamap. Scegli Textures -&gt; Add folder per caricare le textures contenute in una cartella. Dopodich&egrave; premi “Alphamap” nella finestra a sinistra. Lo schermo dovrebbe apparirti all'incirca cos&igrave;.</p>
+
+<p align="center"><img src="images/Image2.jpg"></p>
+
+<p class="testoBLACK">Fai caso alla Palette in alto a sinistra. Fai click sul quadratino nero in alto a sinistra e ti apparir&agrave; una finestra che serve a scegliere un colore da assegnare a quell'elemento (numero #0) della palette.Dopo che  hai scelto un colore, seleziona una texture dalla texture window per assegnarla a quel colore. Ecco come appare la mia alphamap adesso.</p>
+
+<p align="center"><img src="images/Image3.jpg"></p>
+
+<p class="testoBLACK">Dopodich&egrave; puoi assegnare altre textures ad altri colori. Per pitturare l'alphamap usa CTRL+SHIFT+tasto sinistro del mouse (come per i vertici, ma adesso il pulsante alphamap &egrave; attivo). Ecco come appare la mia alphamap usando 3 colori e pitturando qu&agrave; e l&agrave;.</p>
+
+<p align="center"><img src="images/Image4.jpg"></p>
+
+<p class="testoBLACK">Se ti appare un triangolo nero mentre la preview in 3d &egrave; in texture mode, significa che in quel triangolo hai cercato di mescolare pi&ugrave; di due textures, che q3 non pu&ograve; gestire.</p>
+<p class="testoBLACK">Se pensi che le tue textures appaiano troppo strette o troppo larghe puoi alterarne il fattore di scala premendo + e - sul tastiernino numerico della tastiera.</p>
+<p class="testoGREEN"><b>. Exporting</b></p>
+<p class="testoBLACK">Premendo
+File -&gt; Export -&gt; Map ti apparir&agrave; questa nuova finestra di dialogo.</p>
+
+<p align="center"><img src="images/Image5.jpg"></p>
+
+<p class="testoBLACK">La parte pi&ugrave; importante &egrave; “Metashader options”, e “Alphamap
+options”. Filename &egrave; il nome del file con cui verr&agrave; salvato lo  .shader script file. Name &egrave; come lo shader stesso si chiamer&agrave; (possono essere diversi). Alphamap filename si spiega da s&egrave;.</p>
+<p class="testoBLACK">Se vuoi puoi imporre a EasyGen di esportare la tua mappa complete di uno skybox e  di una info_player_start. Puoi anche scegliere di aggiungere altri effetti particolari che tipici dei livelli di Q3:TA come la polvere, il respiro e l'effetto nuvole sul terreno.</p>
+<p class="testoBLACK">Se hai modificato solo qualche texture, ma non la mappa, puoi valutare la possibilit&agrave; di andare ad esportare solo gli shaders e/o l'alphamap. Se cos&igrave; fosse spunta gli appropriati check box in alto a sinistra nel riquadro &quot;Save what&quot;.</p>
+<p class="testoBLACK">Premi &quot;Continue &gt;&gt;&quot; e dai un nome al map. Alch&egrave; sei pronto a lanciare il Radiant ed a compilare. Niente di pi&ugrave; difficile.</p>
+<p class="testoBLACK">In bocca al lupo.</p>
+
+<h3>
+  <p class="testoGRAYs">Tutorial scritto da  Hubas.</p>
+</h3>
+
+</body>
+</html>

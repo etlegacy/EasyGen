@@ -1,0 +1,50 @@
+//	PX PY PZ - current point to modify
+//	MX MY    - modifier position
+//	MH MR    - modifier height and radius
+//	MAXZ     - max z value of the grid
+//	MINZ     - min z value of the grid
+//	PI       - pigreco 3.14 etc etc
+//	NEWZ     - when you want, load here the new value for Z
+
+
+beginSETUP
+// MODE 'Add' can be applied
+fl_modeAdd	= 1
+
+// MODE 'Compare' can be applied
+fl_modeCompare	= 0
+
+// MODE 'Force' can be applied
+fl_modeForce	= 0
+
+// Computes points only within modifier square radius
+fl_squareRadius	= 0
+
+// Computes points only within modifier radius
+fl_Radius	= 1
+
+// Height can't never be negative
+fl_positiveHeight	= 1
+endSETUP
+
+//
+// This does:
+//
+// NEWZ = MH * ( [0..1] - 0.5 ) * (1 - distance(P,M) / MR )
+//
+beginCODE
+
+	ex_dist d,PX,PY,MX,MY
+
+	mov dd,d
+	div dd,MR
+	opp dd
+	add dd,1
+
+	rand rnd
+	sub rnd,0.5
+	mul rnd,MH
+	mul rnd,dd
+
+	mov NEWZ,rnd
+endCODE

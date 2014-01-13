@@ -1,0 +1,27 @@
+
+.testoGREEN {
+ font-family: tahoma, verdana, arial, helvetica;
+ font-size: 12px; 
+ color: #44823E;
+}
+
+.testoBLUE {
+ font-family: tahoma,verdana,arial,helvetica;
+ font-size: 14px; 
+ color: #6060C6;
+}
+
+.testoCYAN {
+ font-family: tahoma,verdana,arial,helvetica;
+ font-size: 12px; 
+ color: #80C8C8;
+}
+
+
+.testoBLACK {
+ font-family: tahoma,verdana,arial,helvetica;
+ font-size: 12px; 
+ color: #000000;
+}
+
+.testoGRAYs { font-family: tahoma, verdana, arial, helvetica; font-size: 10px; color: #808080; }

@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>EasyGen | Tutorial</title>
+<link rel=stylesheet href="css/main.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body bgcolor="#C0C0C0" text="#000000">
+
+
+<h1 align=center style='text-align:center' class="testoBLUE">Terrain making with EasyGen<br>
+  by Hubas
+</h1>
+
+<p class="testoBLACK">This
+tutorials aim will be to explain how to use the very handy little program
+called EasyGen. </p>
+<p class="testoBLACK">Creating good terrain for Quake 3 or one of
+its mods used to be a big hassle. First you had to draw a height map (which is
+fairly easy to visualize IMO), then you had to write, or at least edit, a
+number of shaders, which control how the textures blend on your terrain. Before
+you were finished you would also have to draw something called an alpha map,
+which controls how the terrain is texturized in quake. </p>
+<p class="testoBLACK">Alpha maps
+are, for me at least, very complicated to visualize. It would also be fairly
+easy to make mistakes with the alpha map which produces ugly seams in the end
+result. I think EasyGen’s greatest feature is that it allows you to paint your
+alpha map directly on your terrain mesh. You can even choose to view the
+terrain in texturized mode (blended exactly like the end result). When you are
+done the program will export your terrain complete with shader scripts into the
+appropriate folders. After that it’s just a matter of bringing it up in Radiant
+and continue to add other structures such as houses etc.<br>
+  </p>
+<h2 class="testoWHITE"><span class="testoGREEN">. Setup</span></h2>
+<p><span class="testoBLACK">Be sure of using EasyGenRC1 with at least the 'fixed_exe_b' (if it's not the case check the files section) or EasyGen v1.0.</span><br>
+</p>
+<h2 class="testoGREEN">. Creating the mesh</h2>
+
+<p class="testoBLACK">There are several
+ways to go about creating the terrain mesh.</p>
+<p class="testoBLACK">1. Begin
+from a height map created in Photoshop or another image editing program. If you
+aim to create a terrain with 32 * 32 subdivisions you will need a height map
+with dimensions 33*33 pixels. Every pixel corresponds to a vertex in your
+height map. Dark pixels generate low areas, and bright pixels generate more
+elevated areas. </p>
+<p class="testoBLACK">When you
+have saved your height map in Photoshop, alter the size of your terrain to the
+desired one, click file -&gt; Import -&gt; Bitmap. You will be questioned about
+grid height, which is preset to 256 units high, I usually alter this to 1024 to
+make my terrain more alternating. </p>
+
+<p align="center"><img src="images/Image1.jpg"></p>
+
+<p class="testoREDs"><span class="testoBLACK">Voila! We
+have some terrain.</span></p>
+<p class="testoREDs"><span class="testoBLACK">2. In grid
+mode you can move vertexes up and down by holding down Ctrl+Shift+Lmouse over
+the vertex you want to manipulate. Or you can enter modifier mode and apply
+modifiers like hill or smooth etc. Hold down Ctrl to move your modifier around,
+press apply when you are happy with the position. For more information about
+the modifiers shortcuts look under the help dialog box.</span></p>
+
+<h2 class="testoGREEN">. Creating the Alpamap</h2>
+
+<p class="testoBLACK"> Now we want to select some textures and paint
+our alpha map. Select Textures -&gt; Add folder to add the folder where you’ve
+stored your terrain textures. After that select “Alphamap” on the window on the
+left. Your screen should now look something like this. </p>
+
+<p align="center"><img src="images/Image2.jpg"></p>
+
+<p class="testoBLACK">Notice the
+Palette in the upper left corner. Click the upper left square and a colour
+select tool should pop right up. After you have selected a colour for the
+index, select a texture from the texture window below to assign it to the
+colour. This is what my alpha map looks like now.</p>
+
+<p align="center"><img src="images/Image3.jpg"></p>
+
+<p class="testoBLACK">After that
+you can assign other textures to other colours. When you paint the mesh hold
+down Ctrl+Shift+Lmouse and paint the colour directly on your mesh. After a
+while it might look something like this. </p>
+
+<p align="center"><img src="images/Image4.jpg"></p>
+
+<p class="testoBLACK">If a black
+triangle shows up anywhere in the height map while in texture render mode, it means that you have tried to
+blend more than two textures together over the same polygon, which q3 can’t
+handle. </p>
+<p class="testoBLACK">If you like
+you can select the texture view mode in the view menu to get some kind of idea
+of how it will look in game. If you think your textures looks too stretched or
+too cramped you can alter their scale with Keypad + and Keypad -. </p>
+
+<h2 class="testoGREEN">. Exporting</h2>
+
+<p class="testoBLACK">Pressing
+File -&gt; Export -&gt; Map will bring up a new dialog box which looks like
+this. </p>
+
+<p align="center"><img src="images/Image5.jpg"></p>
+
+<p class="testoBLACK">The most
+important part of this dialog is the “Metashader options”, and the “Alphamap
+options”. Filename is what your .shader file will be called. Name is what your
+actual shader will be called (they can be different). Alphamap filename is
+pretty self explanatory.</p>
+<p class="testoBLACK">If you wish
+you can set EasyGen to export your map complete with a skybox and an
+info_player_start entity. You can also select some of the other cool effects
+which can be seen in the Team Arena levels, such as Dust, Breath, and clouds.</p>
+<p class="testoBLACK">We might
+not have changed our map since our last export. We might just be interested in
+exporting the shaders, and the alpha map in these cases. If that’s the case
+just deselect the appropriate boxes up in the left corner. </p>
+<p class="testoBLACK">Press
+continue and select a name for your map. And you are ready to fire up radiant
+and compile. It’s not harder than that.</p>
+<p class="testoBLACK">Good luck</p>
+
+<h3>
+  <p class="testoGRAYs">Tutorial written by Hubas.</p>
+</h3>
+
+</body>
+</html>

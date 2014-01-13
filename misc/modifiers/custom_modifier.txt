@@ -1,0 +1,163 @@
+ 
+ How to create your own custom modifiers
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ To add a custom modifier simply create a new text file
+and give it the name that will be the modifier's name.
+
+ The extension for a custom modifier script file is 
+".mdf".
+
+ The custom modifier will automatically appear in the
+modifiers list box, preceded by a " >".
+
+ If one or more errors occur during compiling (mdf files
+are compiled after you have started EasyGen) the modifier
+will not be added to the list box and an error message
+will be logged in 'compiler_log.txt' in the modifiers
+folder.
+
+ A modifier script contain two main section, enclosed by
+four keywords (all the rest outside them is ignored):
+
+ beginSETUP
+ :
+ :
+ endSETUP
+
+ beginCODE
+ :
+ :
+ endCODE
+
+ The section enclosed by "beginSETUP" and "endSETUP" contains
+general setup settings for the modifier.
+
+ The section enclosed by "beginCODE" and "endCODE" contains
+the code that will be executed for each point that will be
+computed when the modifier is applied.
+
+ The code used is not a common language even if it looks like
+assembler. I will call it asm-mdf...
+
+ The way you will program a modifier starts on a sheet of paper
+with a pen :). You think of a particular math formula and/or a 
+more complicated alghoritm plus some math formulas and finally
+you will have to translate it into asm-mdf code.
+
+ Writing the code of the modifier
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ This a sample code that shows in few lines how asm-mdf acts.
+It's a very simple language, so don't be afraid to have learning
+something hard, it's not so.
+
+ Complete list of asm-mdf's keywords are stored in 'asm-mdf.txt'
+
+ Example code:
+
+ beginCODE
+
+	mov alfa,32	// alfa = 32
+
+	rnd beta	// beta = 0..1
+	mul beta,64	// beta = beta * 64
+
+	cmp alfa,beta	// compares alfa,beta (it does [alfa - beta] and then test the result, if =0 >0 <0)
+	jg greater	// if alfa > beta jumps to label greater:
+	
+	mov alfa,1	// alfa = 1
+
+	jmp done	// jumps to label done:
+	greater:
+
+	mov alfa,0	// alfa = 0
+	
+	done:	
+
+ endCODE
+
+ What does this code do ? I'll explain in detail if you are not
+familiar with programming.
+
+ It compares 32 with another number, randomly generated in the range
+ 0..63, than tests if 32 is greater or not of this new
+ generated number. If so stores 0 in 'alfa', 1 if not.
+
+ a) It defines two variables, 'alfa' and 'beta'.
+    You can define variables simply by using them.
+    You can use up to 120, but you probably will never do that,
+    10 variables for a modifier are enough.
+    Variables are used to store floating point only numbers.
+    Variables must be lower case.
+    Notice that generally the left operand is where a value will
+    be copied/stored and the left one is the source.
+
+ b) It defines and uses two labels, 'greater' and 'done'. A label 
+    is a name followed by ':'. 
+    Labels are used to change the flow of the code.
+    Code is computed from top to low but with labels you can skip
+    some parts of code.
+    Some instructions are used to test some conditions (cmp) and
+    others to jump if the case (jmp ever,jg etc etc)
+
+ c) It shows how to insert comments: simply place after '//' what
+    you want: all the text between '//' and the end of the line 
+    will be ignored.
+    
+
+
+ Ok but what about accessing terrain data? Here the answer:
+
+ In your code you can refer to some particular variables, that
+ contains terrain and modifier's data:
+
+ Coordinates of the point to compute		PX,PY,PZ 
+ Coordinates of the modifier			MX,MY
+ Radius and Height of the modifier		MR,MH
+ Maximum Z value of the terrain			MAXZ
+ Minimum Z value of the terrain			MINZ
+ Pigreco (3.14 ... )				PI
+
+ And finally, your code must generate a value, that will be
+ the new value to be added, compared or forced to current PZ of
+ the point that is computed (or your code will be useless):
+ you must store this value in NEWZ
+
+ New calculated value for PZ			NEWZ
+
+ (!!!) But if you do not want compute a point (in most cases
+       because it is not within a radius) you will use the keyword
+       'abort' , so that EasyGen is not going to use NEWZ for
+       that point.
+
+       Example:
+
+	beginCODE
+
+	[...]
+
+	ex_dist d,PX,PY,MX,MY	// d = distance between (PX,PY) and (MX,MY)
+
+	cmp d,MR		// compares the distance with modifier radius
+	jle ok			// if is lesser than modifier radius, procedes
+	abort			// if greater (out of range) abort 
+	ok:
+	[...]
+
+	endCODE
+
+
+ The simplest modifier is 'Level (square).mdf' , because with the flag
+ that lets easygen to compute only points within modifer radius, reduces
+ the modifier code to be only :
+
+ beginCODE
+
+	mov NEWZ,MH
+
+ endCODE
+
+ Another simple modifier you could analyze is 'Level (circle).mdf'.
+
+ EOF.
