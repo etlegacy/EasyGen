@@ -7,6 +7,8 @@ NOTE
 ======
 This program was originally created by Francesco Bancalà and due to him releasing the source we can now continue his work.
 
+Original website: http://www.webalice.it/bancala/
+
 Included are his last notes which came with the source.
 
 ======
