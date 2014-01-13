@@ -1,7 +1,7 @@
 textures/%METASHADER_NAME%_base
 {
+	nopicmips
 	q3map_lightmapaxis z
 	q3map_lightmapmergable
-	q3map_lightmapsize %TEXTURE_0_SIZEX% %TEXTURE_0_SIZEY%
-	q3map_tcGen ivector ( %TEXTURE_0_SGEN% ) ( %TEXTURE_0_TGEN% )
+	q3map_tcGen ivector ( 512 0 0 ) ( 0 512 0 )
 }
