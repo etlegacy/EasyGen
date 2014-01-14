@@ -234,6 +234,12 @@ FILE(GLOB JASPER_SOURCES
 	"${JASPER_LIB}/*/*.h"
 	"${JASPER_LIB}/*/*.c"
 )
+
+FILE(GLOB JASPER_SOURCES_REMOVE
+	"${JASPER_LIB}/jpg/jpg_dummy.c"
+)
+
+list(REMOVE_ITEM JASPER_SOURCES ${JASPER_SOURCES_REMOVE})
 add_library (jasper STATIC ${JASPER_SOURCES})
 add_dependencies(jasper jpeg)
 
