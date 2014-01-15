@@ -4124,10 +4124,10 @@ bool u3d_BoxCollision(CNmVec3 *min1, CNmVec3 *max1, CNmVec3 *min2, CNmVec3 *max2
 
 bool u3d_FaceCSGPoly(CNmFace *fc1, CNmPoly *poly1, float tolerance)
 {
-	CNmVec3 forigin;
-	CNmFace *fc;
+	CNmVec3     forigin;
+	CNmFace     *fc;
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	for (fc = poly1->m_Face; fc; fc = fc->Next)
 	{
@@ -4173,17 +4173,17 @@ bool u3d_FaceCSGPoly(CNmFace *fc1, CNmPoly *poly1, float tolerance)
 
 int u3d_CSGSafe(CNmPoly *polyhard, CNmPoly *poly, CNmPolyList *results, float tolerance)
 {
-	CNmPoly *work   = new CNmPoly;
-	CNmPoly *result = NULL;
-	S_PLANE *pl;
-	CNmFace *fc;
-	CNmPolyList csglist, tmplist;
+	CNmPoly        *work   = new CNmPoly;
+	CNmPoly        *result = NULL;
+	S_PLANE        *pl;
+	CNmFace        *fc;
+	CNmPolyList    csglist, tmplist;
 	CNmPolySubList sublist;
-	CNmPoly *poly1;
-	CNmPoly *poly2;
-	CNmPoly *merged;
-	bool restart;
-	int created = 0;
+	CNmPoly        *poly1;
+	CNmPoly        *poly2;
+	CNmPoly        *merged;
+	bool           restart;
+	int            created = 0;
 
 	work->FromPoly(*poly);      // work = *this
 
@@ -4277,14 +4277,14 @@ int u3d_CSGSafe(CNmPoly *polyhard, CNmPoly *poly, CNmPolyList *results, float to
 
 int u3d_CSG(CNmPoly *polyhard, CNmPoly *poly, CNmPolyList *results, float tolerance)
 {
-	CNmPoly *work   = new CNmPoly;
-	CNmPoly *result = NULL;
-	S_PLANE *pl;
-	CNmFace *fc;
-	CNmPolyList csglist, tmplist;
+	CNmPoly        *work   = new CNmPoly;
+	CNmPoly        *result = NULL;
+	S_PLANE        *pl;
+	CNmFace        *fc;
+	CNmPolyList    csglist, tmplist;
 	CNmPolySubList sublist;
-	int created  = 0;
-	bool collide = false;
+	int            created = 0;
+	bool           collide = false;
 
 	// complete csg
 	if (u3d_PolyInsideOrEqualPoly(poly, polyhard, tolerance))
@@ -4365,7 +4365,7 @@ bool u3d_PolySmallerThan(CNmPoly *poly, float k)        // FIXME, gives errors i
 	S_POINT *pt;
 	S_PLANE *pl;
 	CNmFace *fc;
-	float dist;
+	float   dist;
 
 	// for every face...
 	for (fc = poly->m_Face; fc; fc = fc->Next)
@@ -4426,9 +4426,9 @@ bool u3d_PolyPlaneIntersect(CNmPoly *poly, S_PLANE *pl, float tolerance)  // FIX
 {
 	S_POINT *pt;
 	S_POINT *ptstart;
-	bool sign;
-	bool inside;
-	float dist;
+	bool    sign;
+	bool    inside;
+	float   dist;
 
 	ptstart = NULL;
 
@@ -4506,10 +4506,10 @@ bool u3d_PolyPlaneIntersect(CNmPoly *poly, S_PLANE *pl, float tolerance)  // FIX
 POS u3d_PolyInsidePlane(CNmPoly *poly, S_PLANE *pl, float tolerance)  //TESTME
 {
 	S_POINT *pt;
-	float dist;
-	int pts_out = 0;
-	int pts_in  = 0;
-	int pts_mid = 0;
+	float   dist;
+	int     pts_out = 0;
+	int     pts_in  = 0;
+	int     pts_mid = 0;
 
 	for (pt = poly->m_Point; pt; pt = pt->next)
 	{
@@ -4607,10 +4607,10 @@ bool u3d_PolyCollision(CNmPoly *poly1, CNmPoly *poly2, float tolerance)
 
 bool u3d_PolyFaceCollision(CNmPoly *poly, CNmFace *fc1, float tolerance)
 {
-	CNmFace *fc;
-	CNmVec3 risu;
+	CNmFace     *fc;
+	CNmVec3     risu;
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	// face point inside poly
 	item = fc1->m_FcPtHead;
@@ -4711,7 +4711,7 @@ int u3d_PolyFaceShare(CNmPoly *poly1, CNmPoly *poly2, float tolerance)
 {
 	CNmFace *fc1;
 	CNmFace *fc2;
-	int result = 0;
+	int     result = 0;
 
 	for (fc1 = poly1->m_Face; fc1; fc1 = fc1->Next)
 	{
@@ -4922,11 +4922,11 @@ that is a face must see the other face. (use u3d_PolyPlaneInvShare(pl1,pl2,fc1,f
 */
 bool u3d__FaceShareFace(CNmFace *fc1, CNmFace *fc2, float tolerance)
 {
-	CNmVec3 v;
+	CNmVec3     v;
 	S_FACEPOINT *item;
 	S_FACEPOINT *item1;
 	S_FACEPOINT *item2;
-	int i, i1, i2;
+	int         i, i1, i2;
 
 	// face origin inside check
 	if (u3d_PointInsideOrEqualFace(&fc1->m_pre_Origin, fc2, tolerance))
@@ -5021,8 +5021,8 @@ bool u3d_FaceShareFace(CNmFace *fc1, CNmFace *fc2, float tolerance)
 	S_FACEPOINT *item;
 	S_FACEPOINT *item1;
 	S_FACEPOINT *item2;
-	int i, i1, i2;
-	CNmVec3 outn, v;
+	int         i, i1, i2;
+	CNmVec3     outn, v;
 
 	// face origin inside check
 	v = fc1->GetOrigin();
@@ -5112,7 +5112,7 @@ bool u3d_FaceShareFace(CNmFace *fc1, CNmFace *fc2, float tolerance)
 bool u3d_FaceInsideOrEqualPoly(CNmFace *fc1, CNmPoly *poly1, float tolerance)
 {
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	item = fc1->m_FcPtHead;
 	for (i = 0; i < fc1->m_NumFcPts; i++)
@@ -5132,7 +5132,7 @@ bool u3d_FaceInsideOrEqualPoly(CNmFace *fc1, CNmPoly *poly1, float tolerance)
 bool u3d_FaceInsidePoly(CNmFace *fc1, CNmPoly *poly1, float tolerance)
 {
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	item = fc1->m_FcPtHead;
 	for (i = 0; i < fc1->m_NumFcPts; i++)
@@ -5154,17 +5154,17 @@ Arbitrary oriented faces intersection
 */
 bool u3d_FaceIntersect(CNmFace *fc1, CNmFace *fc2, float tolerance)
 {
-	CNmVec3 ea1, ea2, eb1, eb2, dir;
+	CNmVec3     ea1, ea2, eb1, eb2, dir;
 	S_FACEPOINT *item1;
 	S_FACEPOINT *item2;
 	S_FACEPOINT *itema1;
 	S_FACEPOINT *itema2;
 	S_FACEPOINT *itemb1;
 	S_FACEPOINT *itemb2;
-	float a1, a2, b1, b2, min, max, work;
-	int i;
-	bool got1;
-	bool got2;
+	float       a1, a2, b1, b2, min, max, work;
+	int         i;
+	bool        got1;
+	bool        got2;
 
 	itema1 = NULL;
 	itema2 = NULL;
@@ -5345,7 +5345,7 @@ that is a face must see the other face. (use u3d_PolyPlaneInvShare(pl1,pl2,fc1,f
 bool u3d_FaceInsideFace(CNmFace *fc1, CNmFace *fc2, float tolerance)
 {
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	// face point inside check
 	item = fc1->m_FcPtHead;
@@ -5371,7 +5371,7 @@ is not the same of FaceToFace(here some points can be inside, others in the boun
 bool u3d_FaceInsideOrEqualFace(CNmFace *fc1, CNmFace *fc2, float tolerance)
 {
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	// face point inside check
 	item = fc1->m_FcPtHead;
@@ -5409,7 +5409,7 @@ POS u3d_PointInsidePlane(CNmVec3 *pt, S_PLANE *pl, float *distance, float tolera
 bool u3d_PointInPlanes(CNmVec3 *pt, S_PLANE *plane, float tolerance)
 {
 	S_PLANE *pl;
-	float dist;
+	float   dist;
 
 	for (pl = plane; pl; pl = pl->next)
 	{
@@ -5424,7 +5424,7 @@ bool u3d_PointInPlanes(CNmVec3 *pt, S_PLANE *plane, float tolerance)
 bool u3d_PointInsideOrEqualPoly(CNmVec3 *p, CNmPoly *poly, float tolerance)
 {
 	CNmFace *fc;
-	float dist;
+	float   dist;
 
 	for (fc = poly->m_Face; fc; fc = fc->Next)
 	{
@@ -5440,7 +5440,7 @@ bool u3d_PointInsideOrEqualPoly(CNmVec3 *p, CNmPoly *poly, float tolerance)
 bool u3d_PointInsidePoly(CNmVec3 *p, CNmPoly *poly, float tolerance)
 {
 	CNmFace *fc;
-	float dist;
+	float   dist;
 
 	for (fc = poly->m_Face; fc; fc = fc->Next)
 	{
@@ -5493,7 +5493,7 @@ int u3d_SegmentPlaneClip(CNmVec3 &a,CNmVec3 &b,S_PLANE *plane)
 bool u3d__PointInsideOrEqualFace(CNmVec3 *v, CNmFace *f, float tolerance)
 {
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	item = f->m_FcPtHead;
 
@@ -5514,8 +5514,8 @@ bool u3d__PointInsideOrEqualFace(CNmVec3 *v, CNmFace *f, float tolerance)
 bool u3d_PointInsideOrEqualFace(CNmVec3 *v, CNmFace *f, float tolerance)
 {
 	S_FACEPOINT *item;
-	CNmVec3 dirout;
-	int i;
+	CNmVec3     dirout;
+	int         i;
 
 	item = f->m_FcPtHead;
 
@@ -5541,7 +5541,7 @@ bool u3d_PointInsideOrEqualFace(CNmVec3 *v, CNmFace *f, float tolerance)
 bool u3d__PointInsideFace(CNmVec3 *v, CNmFace *f, float tolerance)
 {
 	S_FACEPOINT *item;
-	int i;
+	int         i;
 
 	item = f->m_FcPtHead;
 
@@ -5562,8 +5562,8 @@ bool u3d__PointInsideFace(CNmVec3 *v, CNmFace *f, float tolerance)
 bool u3d_PointInsideFace(CNmVec3 *v, CNmFace *f, float tolerance)
 {
 	S_FACEPOINT *item;
-	CNmVec3 dirout;
-	int i;
+	CNmVec3     dirout;
+	int         i;
 
 	item = f->m_FcPtHead;
 
@@ -5592,10 +5592,10 @@ bool u3d__EdgeIntersect(S_FACEPOINT *item1, S_FACEPOINT *item2, float tolerance)
 	float dist_b1;
 	float dist_a2;
 	float dist_b2;
-	bool sign_a1;
-	bool sign_b1;
-	bool sign_a2;
-	bool sign_b2;
+	bool  sign_a1;
+	bool  sign_b1;
+	bool  sign_a2;
+	bool  sign_b2;
 
 	//////
 
@@ -5648,14 +5648,14 @@ bool u3d__EdgeIntersect(S_FACEPOINT *item1, S_FACEPOINT *item2, float tolerance)
 
 bool u3d_EdgeIntersect(S_FACEPOINT *item1, S_FACEPOINT *item2, float tolerance)
 {
-	float dist_a1;
-	float dist_b1;
-	float dist_a2;
-	float dist_b2;
-	bool sign_a1;
-	bool sign_b1;
-	bool sign_a2;
-	bool sign_b2;
+	float   dist_a1;
+	float   dist_b1;
+	float   dist_a2;
+	float   dist_b2;
+	bool    sign_a1;
+	bool    sign_b1;
+	bool    sign_a2;
+	bool    sign_b2;
 	CNmVec3 dirout, n;
 
 	n = (*item1->next->vecptr - *item1->vecptr) ^ (*item2->next->vecptr - *item2->vecptr);
@@ -5768,7 +5768,7 @@ bool u3d_SquareFaceRayIntersection(CNmVec3& a, CNmVec3& b, CNmVec3& c, CNmVec3& 
 	S_PLANE plane;
 	CNmVec3 ra, ba, cb, dc, ad, ain, bin, cin, din;
 	CNmVec3 p;
-	float dist;
+	float   dist;
 
 	ra = a - eye;
 

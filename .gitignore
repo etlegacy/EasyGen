@@ -34,3 +34,5 @@ Thumbs.db
 # CDT-specific
 /.cproject
 
+# CMake specific
+CMakeLists.txt.user

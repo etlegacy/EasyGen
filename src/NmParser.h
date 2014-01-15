@@ -39,8 +39,8 @@ public:
 	float   XFloat(bool trim = true);   // extract a float from current position (trim ON deletes ' ' from beginning first)
 	bool    XString(CNmStr&str, char end); // extract a string from current position to char end
 	bool    XString(char **dst, char end); // extract a string from current position to char end
-	                                      // m_Position is set over end
-	                                      // dst is destroyed without any type of checks
+	                                       // m_Position is set over end
+	                                       // dst is destroyed without any type of checks
 
 	void    XClear(char c);     // while c is read, increment m_Pos
 	void    XClear(const char *setc);
