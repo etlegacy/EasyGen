@@ -1028,7 +1028,7 @@ void CEasyGenView::OnLButtonDblClk(UINT nFlags, CPoint point)
 	CView::OnLButtonDblClk(nFlags, point);
 }
 
-void CEasyGenView::OnTimer(UINT nIDEvent)
+void CEasyGenView::OnTimer(UINT_PTR nIDEvent)
 {
 	CView::OnTimer(nIDEvent);
 /*
